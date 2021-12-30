@@ -4,7 +4,7 @@ const path = require('path')
 const hbs = require('hbs')
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
-
+const port = process.env.PORT || 3000
 
 //set path 
 const pubclicdir = path.join(__dirname, '../public')
@@ -83,6 +83,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('server started')
+app.listen(port, () => {
+    console.log('server started on',port)
 })
